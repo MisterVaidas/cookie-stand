@@ -8,30 +8,29 @@ function randomNum(minCustPerHour, maxCustPerHour) {
     return Math.floor(Math.random() * (maxCustPerHour - minCustPerHour + 1) + minCustPerHour);
 }
 
-const store1 = {
-    storeName: "Seatle",
-    minCustPerHour: 23,
-    maxCustPerHour: 65,
-    avgPerCustomer: 6.3,
-    customersEachHour: [],
-    cookiesEachHour: [],
-    totalCookies: 0,
-    calcCustomersEachHour: function () {
+function Store(storeName, minCustPerHour, maxCustPerHour, avgPerCustomer) {
+    this.storeName = storeName;
+    this.minCustPerHour = minCustPerHour;
+    this.maxCustPerHour = maxCustPerHour;
+    this.avgPerCustomer = avgPerCustomer;
+    this.customersEachHour = [];
+    this.cookiesEachHour = [];
+    this.totalCookies = 0;
+    this.calcCustomersEachHour = function() {
         for (let i = 0; i < openingHours.length; i++) {
             this.customersEachHour.push(randomNum(this.minCustPerHour, this.maxCustPerHour));
         }
-    },
+    };
 
-    calcCookiesEachHour: function () {
+    this.calcCookiesEachHour = function () {
         for (let i = 0; i < openingHours.length; i++) {
             const oneHour = Math.ceil(this.customersEachHour[i] * this.avgPerCustomer);
             this.cookiesEachHour.push(oneHour);
             this.totalCookies += oneHour;
         }
-    },
+    };
 
-    render: function() {
-
+    this.render = function() {
         this.calcCustomersEachHour();
         this.calcCookiesEachHour();
 
@@ -47,10 +46,20 @@ const store1 = {
 
         for (let i = 0; i < openingHours.length; i++) {
             const li = document.createElement("li");
+            li.className = "sales-data"; //added this line for styles for sale data
             li.textContent = `${openingHours[i]}: ${this.cookiesEachHour[i]} cookies`;
             ul.appendChild(li);
         }
-    },
-};
+    };
+}
 
-store1.render();
+const stores = [
+    new Store('Seatle', 23, 65, 6.3),
+    new Store('Tokyo', 3, 25, 1.2),
+    new Store('Dubai', 11, 38, 3.7),
+    new Store('Paris', 20, 38, 2.3),
+    new Store('Lima', 2, 16, 4.6),
+];
+
+stores.forEach(store => store.render());
+

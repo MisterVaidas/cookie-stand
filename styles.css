@@ -1,0 +1,47 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+    color: green;
+}
+
+p.sales-data {
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+}
+
+.sales-data {
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    color: red;
+}
+
+body {
+    font-family: Georgia, Times, serif;
+    color: blue;
+    background-color: #F0F0F0;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.box {
+    background-color: #ADD8E6; /* Light blue */
+    color: #00008B; /* Dark blue */
+}
+
+table {
+    background-color: #FFFFE0; /* Light yellow */
+    color: #000000; /* Black */
+}
+
+.box, table {
+    padding: 15px; /* add some space inside your boxes/tables */
+    margin-bottom: 20px; /* add some space between elements */
+    border-radius: 5px; /* optional: round the corners of your boxes/tables */
+}
+
+a:hover, button:hover {
+    opacity: 0.7; /* give feedback when interactive elements are hovered over */
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px; /* reduce padding on smaller screens */
+    }
+}
