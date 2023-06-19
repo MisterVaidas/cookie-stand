@@ -21,27 +21,27 @@ body {
 }
 
 .box {
-    background-color: #ADD8E6; /* Light blue */
-    color: #00008B; /* Dark blue */
+    background-color: #ADD8E6; 
+    color: #00008B; 
 }
 
 table {
-    background-color: #FFFFE0; /* Light yellow */
-    color: #000000; /* Black */
+    background-color: #FFFFE0; 
+    color: #000000; 
 }
 
 .box, table {
-    padding: 15px; /* add some space inside your boxes/tables */
-    margin-bottom: 20px; /* add some space between elements */
-    border-radius: 5px; /* optional: round the corners of your boxes/tables */
+    padding: 15px; 
+    margin-bottom: 20px; 
+    border-radius: 5px; 
 }
 
 a:hover, button:hover {
-    opacity: 0.7; /* give feedback when interactive elements are hovered over */
+    opacity: 0.7; 
 }
 
 @media (max-width: 600px) {
     body {
-        padding: 10px; /* reduce padding on smaller screens */
+        padding: 10px; 
     }
 }
