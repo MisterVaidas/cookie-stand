@@ -30,28 +30,54 @@ function Store(storeName, minCustPerHour, maxCustPerHour, avgPerCustomer) {
         }
     };
 
-    this.render = function() {
-        this.calcCustomersEachHour();
-        this.calcCookiesEachHour();
-
-        const article = document.createElement("article");
-        container.appendChild(article);
-
-        const h3 = document.createElement("h3");
-        h3.textContent = this.storeName;
-        article.appendChild(h3);
-
-        const ul = document.createElement("ul");
-        article.appendChild(ul);
-
-        for (let i = 0; i < openingHours.length; i++) {
-            const li = document.createElement("li");
-            li.className = "sales-data"; //added this line for styles for sale data
-            li.textContent = `${openingHours[i]}: ${this.cookiesEachHour[i]} cookies`;
-            ul.appendChild(li);
-        }
-    };
 }
+
+Store.prototype.render = function() {
+    this.calcCustomersEachHour();
+    this.calcCookiesEachHour();
+
+    const table = document.getElementById('store-table');
+    const tr = document.createElement('tr');
+
+    let td = document.createElement('td');
+    td.textContent = this.storeName;
+    tr.appendChild(td);
+
+    for (let i = 0; i < openingHours.length; i++) {
+        td = document.createElement('td');
+        td.textContent = `${this.cookiesEachHour[i]} cookies`;
+        tr.appendChild(td);
+    }
+
+    td = document.createElement('td');
+    td.textContent = this.totalCookies;
+    tr.appendChild(td);
+
+    table.appendChild(tr);
+};
+
+const storeTable = document.createElement('table');
+storeTable.id = 'store-table';
+container.appendChild(storeTable);
+
+let tr = document.createElement('tr');
+let th = document.createElement('th');
+th.textContent = "Store";
+tr.appendChild(th);
+
+for (let i = 0; i < openingHours.length; i++) {
+    th = document.createElement('th');
+    th.textContent = openingHours[i];
+    tr.appendChild(th);
+}
+
+th = document.createElement('th');
+th.textContent = 'Daily Location Total';
+tr.appendChild(th);
+
+storeTable.appendChild(tr);
+
+  
 
 const stores = [
     new Store('Seatle', 23, 65, 6.3),
@@ -61,5 +87,8 @@ const stores = [
     new Store('Lima', 2, 16, 4.6),
 ];
 
-stores.forEach(store => store.render());
+
+for(let i = 0; i < stores.length; i++) {
+    stores[i].render();
+}
 
