@@ -9,6 +9,7 @@ h1 {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     border: 2px solid brown;
     border-radius: 5px;
+    margin: 20px;
 }
 
 h2, h3, h4, h5, h6 {
@@ -49,7 +50,6 @@ table {
     padding: 8px;
     text-align: center;
     background-color: rgb(143, 192, 192);
-    /*color: rgb(13, 43, 212);*/
     border: 1px solid #00008B;
 }
 

@@ -18,8 +18,11 @@ function Store(storeName, minCustPerHour, maxCustPerHour, avgPerCustomer) {
     this.totalCookies = 0;
     this.staffEachHour = []; // added this line for second table
     this.calcCustomersEachHour = function() {
+        const controlCurve = [0.5, 0.75, 1.0, 0.6, 0.8, 1.0, 0.7, 0.4, 0.6, 0.9, 0.7, 0.5, 0.3, 0.4, 0.6];
         for (let i = 0; i < openingHours.length; i++) {
-            this.customersEachHour.push(randomNum(this.minCustPerHour, this.maxCustPerHour));
+            let baseCustomers = randomNum(this.minCustPerHour, this.maxCustPerHour);
+            let adjustedCustomers = Math.round(baseCustomers * controlCurve[i]);
+            this.customersEachHour.push(adjustedCustomers);
         }
     };
 
