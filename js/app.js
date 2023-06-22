@@ -16,6 +16,7 @@ function Store(storeName, minCustPerHour, maxCustPerHour, avgPerCustomer) {
     this.customersEachHour = [];
     this.cookiesEachHour = [];
     this.totalCookies = 0;
+    this.staffEachHour = []; // added this line for second table
     this.calcCustomersEachHour = function() {
         for (let i = 0; i < openingHours.length; i++) {
             this.customersEachHour.push(randomNum(this.minCustPerHour, this.maxCustPerHour));
@@ -27,6 +28,14 @@ function Store(storeName, minCustPerHour, maxCustPerHour, avgPerCustomer) {
             const oneHour = Math.ceil(this.customersEachHour[i] * this.avgPerCustomer);
             this.cookiesEachHour.push(oneHour);
             this.totalCookies += oneHour;
+        }
+    };
+
+    this.calcStaffEachHour = function() {
+        for (let i = 0; i < openingHours.length; i++) {
+            // Minimum of 2 staff memebrs at all times
+            let staff = Math.max(2, Math.ceil(this.customersEachHour[i] / 20));
+            this.staffEachHour.push(staff);
         }
     };
 
@@ -77,6 +86,34 @@ tr.appendChild(th);
 
 storeTable.appendChild(tr);
 
+Store.prototype.renderStaffing = function() {
+    this.calcCustomersEachHour();
+    this.calcStaffEachHour();
+
+    const table = document.getElementById('staff-table');
+    const tr = document.createElement('tr');
+
+    let td = document.createElement('td');
+    td.textContent = this.storeName;
+    tr.appendChild(td);
+    console.log(td);
+
+    let totalStaff = 0;
+    for (let i = 0; i < openingHours.length; i++) {
+        td = document.createElement('td');
+        td.textContent = this.staffEachHour[i];
+        tr.appendChild(td);
+        totalStaff += this.staffEachHour[i];
+    }
+
+    td = document.createElement('td');
+    td.textContent = totalStaff;
+    tr.appendChild(td);
+
+    table.appendChild(tr);
+    console.log(table);
+};
+
   
 
 const stores = [
@@ -90,5 +127,39 @@ const stores = [
 
 for(let i = 0; i < stores.length; i++) {
     stores[i].render();
+}
+
+// Creating staffing table
+
+const staffTable = document.createElement('table');
+staffTable.id = 'staff-table';
+container.appendChild(staffTable);
+console.log(staffTable);
+
+// Adding table headers
+
+tr = document.createElement('tr');
+th = document.createElement('th');
+th.textContent = 'Store';
+tr.appendChild(th);
+console.log(th);
+
+for (let i = 0; i < openingHours.length; i++) {
+    th = document.createElement('th');
+    th.textContent = openingHours[i];
+    tr.appendChild(th);
+}
+
+th = document.createElement('th');
+th.textContent = 'Total';
+tr.appendChild(th);
+console.log(th);
+
+staffTable.appendChild(tr);
+
+// Adding staffing data to the table
+
+for (let i = 0; i < stores.length; i++) {
+    stores[i].renderStaffing();
 }
 
