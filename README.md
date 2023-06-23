@@ -1,41 +1,48 @@
-# Cookie Stand
+# Awesome Cookie Stand
 
-This project simulates a cookie stand chain which provides hourly sales data for each location on a publicly-facing webpage.
+## Project Description
 
-## Overview
+Awesome Cookie Stand is a website for a fictional cookie stand that sells salmon-flavored cookies. It includes features for customers to learn about the business, order cookies, and view sales data. The website also includes an internal page for viewing and processing customer orders.
 
-The project uses JavaScript object literals to handle the calculation of daily sales at each store. It uses the Document Object Model (DOM) to display these sales on the webpage. The design of the webpage is responsive and accessible, with a focus on clean, readable design.
+## Features
 
-## Installation
+- Display of daily projected sales data for multiple cookie stand locations.
+- Form for customers to order cookies and merchandise.
+- Page for viewing and processing customer orders.
+- Customers can choose among multiple display or color profiles for the page.
 
-1. Clone this repository to your local system.
+### Sales Page
 
-2. Navigate to the directory.
+This page presents the projected hourly sales data for each store location in a table format. It also has a link to the order page.
 
-3. Open the `index.html` file in your preferred browser.
+### Order Page (store.html)
 
-## Usage
+This page contains a form where customers can order cookies and swag. The form includes fields for:
 
-- Open the `index.html` file in your browser.
-- Scroll through the page to view the hourly sales data for each store location.
-- All data is generated randomly for each store location based on their minimum and maximum hourly customers, and average cookies sold per customer.
+- Customer's name and address
+- Email address
+- Phone number
+- Quantity of cookies
+- Additional special instructions
 
-## Contributing
+### Order Processing Page (order-processing.html)
 
-This project is a demonstration and is not regularly maintained. However, if you'd like to contribute, feel free to do so. All contributions, issues, and feature requests are welcome.
+This private page shows a list of pending orders and their details. The business owner can process the orders by clicking a button next to the order. This action moves the list item to a "Filled Orders" list at the bottom of the page.
 
-1. Clone this repository.
-2. Create a branch with your feature or bug fix.
-3. Commit your changes.
-4. Push your code to your branch.
-5. Open a Pull Request with a detailed description of your changes.
+### New Cookie Stand Form
 
-## License
+This form allows the addition of a new cookie stand. On submission, an event handler creates a new instance of a cookie stand and appends it to the sales data table.
 
-n/a
+## Future Enhancements
 
-## Acknowledgments
+In the future, we plan to add more functionality to the site, including:
 
-- OpenAI's ChatGPT-4 for assisting with documentation.
-- Google for assisting with code and information
-- Google Bard for assisting with styles
+- An inventory management system.
+- Integration with a payment gateway for processing orders.
+- Interactive elements for user engagement.
+
+## Contribution
+
+Contributions are welcome! Please read the contribution guidelines first.
+
+
