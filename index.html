@@ -6,11 +6,22 @@
     <title>Awesome Cookie Stand</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/homeStyles.css">
+    <link rel="stylesheet" href="css/theme.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Georgia&display=swap">
 </head>
 <body>
     <header>
+        <div class="choose-theme">
+        <label for="theme">Choose a theme: </label>
+        <select id="theme" name="theme">
+            <option value="default">Default</option>
+            <option value="dark">Dark</option>
+            <option value="newspaper">Newspaper</option>
+            <option value="spreadsheet">Spreadsheet</option>
+        </select>
+        </div>
+        <img src="img/salmon.png" alt="Image of salmon">
         <h1>Awesome Cookie Stand</h1>
         <nav class="nav">
             <ul id="nav-list">
@@ -24,14 +35,30 @@
     <main>
         <section class="about">
             <h2>About Us</h2>
-            <p>Awesome Cookie Stand is the best place to satisfy your cookie cravings. We serve a variety of delicious cookies made fresh every day. 
-                We have several locations around the city for your convenience.
+            <p>Awesome Cookie Stand has been serving the most delicious cookies since 2020. Our business started out as a small family-operated cookie stand in Seattle. 
+                Inspired by our love for baking and passion for quality, we've been able to grow and now proudly operate cookie stands in five locations worldwide, 
+                including Tokyo, Dubai, Paris, and Lima.
+            </p>
+            <p>We're committed to bringing our customers the best, using only high-quality ingredients and time-tested recipes. Each cookie is a product of our dedication, 
+                from the moment the ingredients are mixed to when the freshly baked cookies are taken out of the oven. We believe that a great cookie can make any day better, 
+                and we strive to create cookies that not only taste good, but also bring a smile to your face.
+            </p>
+            <p>At Awesome Cookie Stand, we understand that every cookie we make is an opportunity to bring joy to our customers. We love what we do and we're excited to share 
+                our cookies with you. Come and visit us at any of our locations, or get in touch if you have any questions. We can't wait to serve you!
             </p>
         </section>
 
         <section class="about">
             <h2>Locations</h2>
-            <div id="container"></div>
+            <div id="container">
+                <ul>
+                    <li><strong>Seatle: </strong>123 Cookie St., Seattle, WA</li>
+                    <li><strong>Tokyo: </strong>456 Biscuit Blvd., Tokyo, Japan</li>
+                    <li><strong>Dubai: </strong>85 Salmon Rd., Dubai, UAE</li>
+                    <li><strong>Paris: </strong>606 Sea Av., Paris, France</li>
+                    <li><strong>Lima: </strong>74a America Rd., Lima, Peru</li>
+                </ul>
+            </div>
         </section>
 
         <section class="about">
@@ -48,7 +75,8 @@
 
     <footer>
         <p>©2023 Awesome Cookie Stand</p>
+        <p>Check out our <a href="sales.html">Sales data</a></p>
     </footer>
-
+<script src="js/theme.js"></script>
 </body>
 </html>

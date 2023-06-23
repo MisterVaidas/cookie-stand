@@ -13,8 +13,37 @@
     <header>
         <h1>Sales and Staff Tables</h1>
     </header>
-    
     <div id="container"></div>
+
+    
+    <form id="cookie-stand-form">
+        
+            <h2>Add new cookie stand</h2>
+        
+        <fieldset>
+            <legend>Cookie Stand Details</legend>
+
+            <label for="store-name">Store Name:</label>
+            <input type="text" id="store-name" name="store-name">
+
+            <label for="min-cust-per-hour">Minimum Customers Per Hour:</label>
+            <input type="number" id="min-cust-per-hour" name="min-cust-per-hour">
+
+            <label for="max-cust-per-hour">Maximum Customers Per Hour:</label>
+            <input type="number" id="max-cust-per-hour" name="max-cust-per-hour">
+
+            <label for="avg-per-customer">Average Cookies Per Customer:</label>
+            <input type="number" id="avg-per-customer" name="avg-per-customer">
+
+            <button type="submit">Add Cookie Stand</button>
+        </fieldset>
+    </form>
+
+  
+    <section>
+        <a href="html/store.html" class="order-button">Order Online Now</a>
+    </section>
+    
     <script src="js/app.js"></script>
     
 </body>

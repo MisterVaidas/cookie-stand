@@ -164,5 +164,27 @@ staffTable.appendChild(tr);
 
 for (let i = 0; i < stores.length; i++) {
     stores[i].renderStaffing();
-}
+};
+
+const form = document.getElementById('cookie-stand-form');
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const storeName = event.target['store-name'].value;
+    const minCustPerHour = Number(event.target['min-cust-per-hour'].value);
+    const maxCustPerHour = Number(event.target['max-cust-per-hour'].value);
+    const avgPerCustomer = Number(event.target['avg-per-customer'].value);
+
+    const newStore = new Store(storeName, minCustPerHour, maxCustPerHour, avgPerCustomer);
+
+    newStore.calcCustomersEachHour();
+    newStore.calcCookiesEachHour();
+    newStore.render();
+
+    event.target['store-name'].value = '';
+    event.target['min-cust-per-hour'].value = '';
+    event.target['max-cust-per-hour'].value = '';
+    event.target['avg-per-customer'].value = '';
+});
 

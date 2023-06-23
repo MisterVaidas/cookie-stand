@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/order-form.css">
+</head>
+<body>
+    
+
+<form id="order-form">
+    <fieldset>
+        <legend>Personal Information</legend>
+        <label for="fname">First Name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last Name:</label><br>
+        <input type="text" id="lname" name="lname"><br>
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address"><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br>
+        <label for="phone">Phone:</label><br>
+        <input type="tel" id="phone" name="phone"><br>
+    </fieldset>
+
+    <fieldset>
+        <legend>Order Details</legend>
+        <label for="product">Product:</label><br>
+        <select id="product" name="product">
+            <option value="salmonCookies">Salmon Cookies</option>
+            <option value="swag">Swag</option>
+        </select><br>
+        <label for="quantity">Quantity:</label><br>
+        <input type="number" id="quantity" name="quantity" min="1"><br>
+    </fieldset>
+
+    <fieldset>
+        <legend>Payment Info</legend>
+        <label for="cardname">Name on Card:</label><br>
+        <input type="text" id="cardname" name="cardname"><br>
+        <label for="cardnumber">Card Number:</label><br>
+        <input type="text" id="cardnumber" name="cardnumber"><br>
+        <label for="expiry">Expiry Date:</label><br>
+        <input type="date" id="expiry" name="expiry"><br>
+        <label for="cvv">CVV:</label><br>
+        <input type="text" id="cvv" name="cvv"><br>
+    </fieldset>
+
+    <fieldset>
+        <legend>Special Instructions</legend>
+        <textarea id="special" name="special"></textarea><br>
+    </fieldset>
+    
+    <input type="submit" value="Submit">
+</form>
+<script src="/js/order-form.js"></script>
+</body>
+</html>

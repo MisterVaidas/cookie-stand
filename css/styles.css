@@ -12,10 +12,6 @@ h1 {
     margin: 20px;
 }
 
-h2, h3, h4, h5, h6 {
-    font-family: 'Roboto', sans-serif;
-    color: green;
-}
 
 p.sales-data {
     font-family: Arial, Verdana, Helvetica, sans-serif;
@@ -66,4 +62,85 @@ table {
 #store-table tr:nth-child(even) {
     background-color: aliceblue;
 }
+
+form {
+    max-width: 600px;
+    margin: 50px;
+    padding: 20px;
+    background-color: rgb(243, 235, 235);
+    border-radius: 4px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    
+
+}
+
+form h2 {
+    text-align: left;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: antiquewhite;
+
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form input, 
+form select, 
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #333;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #444;
+}
+
+legend {
+    padding-bottom: 5px;
+    font-size: large;
+    font-weight: 600;
+}
+
+.order-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f0a500;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin: 20px 0;
+    transition: background-color 0.3s ease;
+}
+
+.order-button:hover {
+    background-color: #db8b00;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+}
+
 

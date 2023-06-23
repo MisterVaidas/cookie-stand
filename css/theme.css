@@ -1,0 +1,26 @@
+/* Default theme */
+body {
+    color: black;
+    background-color: white;
+}
+
+/* Dark theme */
+body.dark {
+    color: white;
+    background-color: black;
+}
+
+/* Newspaper theme */
+body.newspaper {
+    color: black;
+    background-color: #f0e68c;
+    font-family: 'Times New Roman', serif;
+}
+
+/* Spreadsheet theme */
+body.spreadsheet {
+    color: #008000;
+    background-color: #ffffff;
+    font-family: 'Courier New', monospace;
+}
+
