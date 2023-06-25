@@ -117,6 +117,38 @@ Store.prototype.renderStaffing = function() {
     console.log(table);
 };
 
+function renderFooterRow() { // Footer row functionality starts here
+    let footerRow = document.querySelector("#store-table tfoot");
+    if (footerRow) {
+        footerRow.remove();
+    }
+
+    footerRow = document.createElement('tfoot');
+    const table = document.getElementById('store-table');
+    table.appendChild(footerRow);
+
+    let td = document.createElement('td');
+    td.textContent = 'Hourly Total for All Stores';
+    footerRow.appendChild(td);
+
+    let totalOfTotals = 0;
+    for (let i = 0; i < openingHours.length; i++) {
+        let totalPerHour = 0;
+        for (let j = 0; j <stores.length; j++) {
+            totalPerHour += stores[j].cookiesEachHour[i];
+        }
+
+        td = document.createElement('td');
+        td.textContent = totalPerHour;
+        footerRow.appendChild(td);
+        totalOfTotals += totalPerHour;
+    }
+
+    td = document.createElement('td');
+    td.textContent = totalOfTotals;
+    footerRow.appendChild(td);
+}
+
   
 
 const stores = [
@@ -131,6 +163,8 @@ const stores = [
 for(let i = 0; i < stores.length; i++) {
     stores[i].render();
 }
+
+renderFooterRow();
 
 // Creating staffing table
 
@@ -177,6 +211,7 @@ form.addEventListener('submit', function(event) {
     const avgPerCustomer = Number(event.target['avg-per-customer'].value);
 
     const newStore = new Store(storeName, minCustPerHour, maxCustPerHour, avgPerCustomer);
+    stores.push(newStore);
 
     newStore.calcCustomersEachHour();
     newStore.calcCookiesEachHour();
@@ -186,5 +221,7 @@ form.addEventListener('submit', function(event) {
     event.target['min-cust-per-hour'].value = '';
     event.target['max-cust-per-hour'].value = '';
     event.target['avg-per-customer'].value = '';
+
+    renderFooterRow();
 });
 
